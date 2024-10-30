@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xpress_chat/register_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -130,6 +131,10 @@ class LoginPage extends StatelessWidget {
                   ),
                   onTap: () {
                     print('Register Page');
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RegisterPage()));
                   },
                 ),
               ],
