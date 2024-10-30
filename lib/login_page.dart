@@ -76,7 +76,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   InkWell(
                     child: Text(
-                      "Forgotten Password",
+                      "Forgot Password?",
                       style: TextStyle(
                           color: Colors.blue,
                           fontSize: 15,
@@ -112,7 +112,7 @@ class LoginPage extends StatelessWidget {
               )),
           //Signup
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 95.0),
+            padding: const EdgeInsets.symmetric(horizontal: 110.0),
             child: Row(
               children: [
                 Text(

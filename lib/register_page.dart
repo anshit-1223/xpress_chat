@@ -134,11 +134,11 @@ class RegisterPage extends StatelessWidget {
               )),
           //Signup
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 95.0),
+            padding: const EdgeInsets.symmetric(horizontal: 135.0),
             child: Row(
               children: [
                 Text(
-                  "Don't have an account?",
+                  "Have an account?",
                   style: TextStyle(
                     fontSize: 15,
                   ),
