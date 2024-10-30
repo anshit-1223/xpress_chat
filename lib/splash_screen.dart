@@ -1,4 +1,4 @@
-import 'dart:nativewrappers/_internal/vm/lib/async_patch.dart';
+import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:xpress_chat/login_page.dart';
@@ -16,7 +16,10 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
 
-    Timer();
+    Timer(Duration(seconds: 5), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => LoginPage()));
+    });
   }
 
   @override
