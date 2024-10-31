@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xpress_chat/home_page.dart';
 import 'package:xpress_chat/login_page.dart';
 import 'package:xpress_chat/register_page.dart';
 import 'package:xpress_chat/splash_screen.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => SplashScreen(),
         "/login": (context) => LoginPage(),
         "/register": (context) => RegisterPage(),
+        "/home": (context) => HomePage(),
       },
     );
   }
