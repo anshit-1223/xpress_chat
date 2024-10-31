@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xpress_chat/home_page.dart';
 import 'package:xpress_chat/register_page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -97,6 +98,10 @@ class LoginPage extends StatelessWidget {
                       ),
                       onPressed: () {
                         print("Logged In");
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
                       },
                       child: Text(
                         'Log In',
