@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:xpress_chat/login_page.dart';
+import 'package:xpress_chat/pages/home_page.dart';
+import 'package:xpress_chat/pages/register_page.dart';
 
-class RegisterPage extends StatelessWidget {
-  const RegisterPage({super.key});
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class RegisterPage extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: 150,
+            height: 250,
           ),
           Align(
             child: Text(
@@ -32,7 +33,7 @@ class RegisterPage extends StatelessWidget {
               children: [
                 Align(
                   child: Text(
-                    "Register to Xpress Chat",
+                    "Log in to Xpress Chat",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -51,39 +52,8 @@ class RegisterPage extends StatelessWidget {
                     padding: EdgeInsets.all(15),
                     child: TextField(
                       decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(50),
-                            borderSide: BorderSide(
-                              color: Colors.black,
-                            ),
-                          ),
-                          labelText: 'Email Address',
-                          hintText: 'Enter Your Email Address'),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(15),
-                    child: TextField(
-                      decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(50),
-                            borderSide: BorderSide(
-                              color: Colors.black,
-                            ),
-                          ),
-                          labelText: 'Full Name',
-                          hintText: 'Enter Your Name'),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(15),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
+                        border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(40.0),
-                          borderSide: BorderSide(
-                            color: Colors.black,
-                          ),
                         ),
                         labelText: 'Username',
                         hintText: 'Enter Your Name',
@@ -96,17 +66,26 @@ class RegisterPage extends StatelessWidget {
                     child: TextField(
                       obscureText: true,
                       decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
+                        border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(40.0),
-                          borderSide: BorderSide(
-                            color: Colors.black,
-                          ),
                         ),
                         labelText: 'Password',
                         hintText: 'Enter Password',
                         // errorText: 'Password is required',
                       ),
                     ),
+                  ),
+                  InkWell(
+                    child: Text(
+                      "Forgot Password?",
+                      style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    onTap: () {
+                      print('Password Change Page');
+                    },
                   ),
                   SizedBox(
                     height: 20.0,
@@ -118,10 +97,14 @@ class RegisterPage extends StatelessWidget {
                         backgroundColor: Colors.blue,
                       ),
                       onPressed: () {
-                        print("Registered Successfully");
+                        print("Logged In");
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
                       },
                       child: Text(
-                        'Register',
+                        'Log In',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
@@ -134,27 +117,29 @@ class RegisterPage extends StatelessWidget {
               )),
           //Signup
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 135.0),
+            padding: const EdgeInsets.symmetric(horizontal: 110.0),
             child: Row(
               children: [
                 Text(
-                  "Have an account?",
+                  "Don't have an account?",
                   style: TextStyle(
                     fontSize: 15,
                   ),
                 ),
                 InkWell(
                   child: Text(
-                    ' Log In',
+                    ' Register',
                     style: TextStyle(
                         color: Colors.blue,
                         fontSize: 15,
                         fontWeight: FontWeight.w400),
                   ),
                   onTap: () {
-                    print('Login Page');
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => LoginPage()));
+                    print('Register Page');
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RegisterPage()));
                   },
                 ),
               ],

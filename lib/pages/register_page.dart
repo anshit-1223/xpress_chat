@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:xpress_chat/home_page.dart';
-import 'package:xpress_chat/register_page.dart';
+import 'package:xpress_chat/pages/login_page.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +11,7 @@ class LoginPage extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: 250,
+            height: 150,
           ),
           Align(
             child: Text(
@@ -33,7 +32,7 @@ class LoginPage extends StatelessWidget {
               children: [
                 Align(
                   child: Text(
-                    "Log in to Xpress Chat",
+                    "Register to Xpress Chat",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -52,8 +51,39 @@ class LoginPage extends StatelessWidget {
                     padding: EdgeInsets.all(15),
                     child: TextField(
                       decoration: InputDecoration(
-                        border: OutlineInputBorder(
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(50),
+                            borderSide: BorderSide(
+                              color: Colors.black,
+                            ),
+                          ),
+                          labelText: 'Email Address',
+                          hintText: 'Enter Your Email Address'),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(15),
+                    child: TextField(
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(50),
+                            borderSide: BorderSide(
+                              color: Colors.black,
+                            ),
+                          ),
+                          labelText: 'Full Name',
+                          hintText: 'Enter Your Name'),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(15),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(40.0),
+                          borderSide: BorderSide(
+                            color: Colors.black,
+                          ),
                         ),
                         labelText: 'Username',
                         hintText: 'Enter Your Name',
@@ -66,26 +96,17 @@ class LoginPage extends StatelessWidget {
                     child: TextField(
                       obscureText: true,
                       decoration: InputDecoration(
-                        border: OutlineInputBorder(
+                        enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(40.0),
+                          borderSide: BorderSide(
+                            color: Colors.black,
+                          ),
                         ),
                         labelText: 'Password',
                         hintText: 'Enter Password',
                         // errorText: 'Password is required',
                       ),
                     ),
-                  ),
-                  InkWell(
-                    child: Text(
-                      "Forgot Password?",
-                      style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400),
-                    ),
-                    onTap: () {
-                      print('Password Change Page');
-                    },
                   ),
                   SizedBox(
                     height: 20.0,
@@ -97,14 +118,10 @@ class LoginPage extends StatelessWidget {
                         backgroundColor: Colors.blue,
                       ),
                       onPressed: () {
-                        print("Logged In");
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomePage()));
+                        print("Registered Successfully");
                       },
                       child: Text(
-                        'Log In',
+                        'Register',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
@@ -117,29 +134,27 @@ class LoginPage extends StatelessWidget {
               )),
           //Signup
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 110.0),
+            padding: const EdgeInsets.symmetric(horizontal: 135.0),
             child: Row(
               children: [
                 Text(
-                  "Don't have an account?",
+                  "Have an account?",
                   style: TextStyle(
                     fontSize: 15,
                   ),
                 ),
                 InkWell(
                   child: Text(
-                    ' Register',
+                    ' Log In',
                     style: TextStyle(
                         color: Colors.blue,
                         fontSize: 15,
                         fontWeight: FontWeight.w400),
                   ),
                   onTap: () {
-                    print('Register Page');
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => RegisterPage()));
+                    print('Login Page');
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LoginPage()));
                   },
                 ),
               ],
